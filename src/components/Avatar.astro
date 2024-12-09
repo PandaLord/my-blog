@@ -1,18 +1,4 @@
----
-const headers = [
-	{
-		name: "Blogs",
-		url: "/blogs",
-	},
-	{
-		name: "About Me",
-		url: "/about",
-	},
-];
----
-
-<div class="navbar bg-base-100">
-	<div class="">
+<div class="avatar">
 		<svg
 			height="30px"
 			width="30px"
@@ -82,9 +68,4 @@ const headers = [
 		</svg>
 		<a class="btn btn-ghost no-animation">Jacky's Blog</a>
 	</div>
-	<ul class="menu menu-horizontal lg:menu-horizontal bg-base-200 rounded-box">
-		{headers.map((h) => <li class=""><button class="btn btn-ghost">{h.name}</button>	</li>)}
-	</ul>
 </div>
-
-<style></style>

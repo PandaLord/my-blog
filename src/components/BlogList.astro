@@ -1,0 +1,13 @@
+---
+import { CollectionEntry } from "astro:content"
+import BlogCard from "./BlogCard.astro"
+
+type Props = {
+   blogs: CollectionEntry<'posts'>[] 
+};
+
+const { blogs } = Astro.props;
+---
+<div class="grid grid-cols-2 md:grid-cols-2 gap-6">
+    { blogs.map(blog => <BlogCard blog={blog}></BlogCard>)}
+</div>

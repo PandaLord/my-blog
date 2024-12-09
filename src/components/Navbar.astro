@@ -1,0 +1,32 @@
+---
+const headers = [
+	{
+		"name": "Home",
+		"url": "/"
+	},
+	{
+		name: "Blogs",
+		url: "/blogs",
+	},
+	{
+		name: "About Me",
+		url: "/about",
+	},
+];
+---
+
+<div class="navbar bg-base-100">
+	<ul class="menu menu-horizontal">
+	{
+		headers.map((h) => (
+			<li class="">
+				<a class="" href={h.url}>
+					{h.name}
+				</a>
+			</li>
+		))
+	}
+	</ul>
+</div>
+
+<style></style>

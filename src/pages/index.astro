@@ -1,13 +1,24 @@
 ---
-import Header from '../components/Header.astro';
-import Tabbar from '../components/Tabbar.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Navbar from "../components/Navbar.astro";
+import Tabbar from "../components/Tabbar.astro";
+import Layout from "../layouts/Layout.astro";
+import Avatar from "../components/Avatar.astro";
+import BlogCard from "../components/BlogCard.astro";
+import { getCollection, getEntry } from "astro:content";
+import BlogList from "../components/BlogList.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const blogs = await getCollection("posts");
 ---
 
 <Layout>
-	<Header />
+	<div class="header">
+		<Avatar />
+		<Navbar />
+	</div>
 	<Tabbar />
+	<BlogList blogs={blogs}>
+		<!-- {canvas_blog.map(item => <BlogCard blog={item}></BlogCard>)}		 -->
+	</BlogList>
 </Layout>
